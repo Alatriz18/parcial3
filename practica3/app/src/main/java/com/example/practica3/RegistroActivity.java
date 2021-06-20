@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /*
-Autor: Angel Jativa, Paul Montaleza
+Autor: Isabel Marquinez, Kevin Santana
 Creado: 16/5/2021
 modificado: 13/05/2021
 descripcion: Vetana de cancelacion de registro.

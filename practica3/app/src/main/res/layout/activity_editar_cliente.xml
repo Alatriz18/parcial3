@@ -7,12 +7,22 @@
     tools:context=".EditarClienteActivity">
 
     <LinearLayout
-        android:layout_width="542dp"
-        android:layout_height="1026dp"
-        android:background="@drawable/fondo"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="@drawable/fondoinicial"
         android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="3dp">
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView68"
@@ -21,12 +31,13 @@
             android:gravity="center"
             android:text="Editar/Eliminar Cliente"
             android:textColor="#0B0A0A"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/txtidProductoEditar"
             android:layout_width="match_parent"
-            android:layout_height="38dp" />
+            android:layout_height="31dp"
+            android:paddingLeft="10dp" />
 
         <EditText
             android:id="@+id/txtCedulaClienteEditar"
@@ -34,7 +45,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese su cedula"
-            android:inputType="number" />
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="#D30E0D0D" />
 
         <EditText
             android:id="@+id/txtApellidoClienteEditar"
@@ -42,7 +55,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese Apellido"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textColorHint="#D30E0D0D" />
 
         <EditText
             android:id="@+id/txtNombreClienteEditar"
@@ -50,7 +65,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese Nombres"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textColorHint="#D30E0D0D" />
 
         <EditText
             android:id="@+id/txtTelefonoClienteEditar"
@@ -58,7 +75,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese su Telefono"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textColorHint="#D30E0D0D" />
 
         <EditText
             android:id="@+id/txtDireccionClienteEditar"
@@ -66,26 +85,52 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese su direccion"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textColorHint="#D30E0D0D" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
 
         <Button
             android:id="@+id/button10"
-            android:layout_width="match_parent"
+            android:layout_width="349dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/teal_700"
+            android:gravity="center"
             android:onClick="actualizar"
             android:text="Actualizar" />
 
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/button13"
-            android:layout_width="match_parent"
+            android:layout_width="349dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
             android:onClick="eliminarCliente"
             android:text="Eliminar" />
 
+        <TextView
+            android:id="@+id/textView86"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/button14"
-            android:layout_width="match_parent"
+            android:layout_width="349dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
             android:onClick="volver"
             android:text="Volver" />
     </LinearLayout>

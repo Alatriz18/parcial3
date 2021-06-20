@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /*
-Autor: Angel Jativa, Paul Montaleza
+Autor: Isabel Marquinez, Kevin Santana
 Creado: 16/5/2021
 modificado: 2/06/2021
 descripcion: Vetana de inicio de session y acceso a las pantalla de Registro y Recuperacion de Contraseña.

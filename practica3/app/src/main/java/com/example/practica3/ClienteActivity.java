@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.security.PublicKey;
 import java.util.ArrayList;
 /*
-Autor: Angel Jativa
+Autor: Isabel Marquinez
 Creado: 16/5/2021
 modificado: 09/06/2021
 descripcion: Vetana de inicio de session y acceso a las pantalla de Registro y Recuperacion de Contraseña.

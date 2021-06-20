@@ -9,141 +9,118 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:background="@drawable/fondo_app"
+        android:background="@drawable/fondo2"
         android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="97dp"
-            android:gravity="center"
-            android:text="Menu de Opciones"
-            android:textColor="#050505"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView31"
+            android:id="@+id/textView35"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="73dp"
-                android:layout_weight="1"
-                android:onClick="abrirPantallaCliente"
-                android:text="Clientes" />
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="match_parent"
-            android:layout_height="64dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="71dp"
-                android:layout_weight="1"
-                android:onClick="abrirPantallaProducto"
-                android:text="Productos" />
-
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="match_parent"
-            android:layout_height="58dp" />
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="MINIMARKET"
+            android:textColor="#100F0F"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="abrirPantallaVenta"
-                android:text="Ventas" />
-
-            <TextView
-                android:id="@+id/textView39"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="290dp"
+            android:layout_height="129dp"
+            android:layout_gravity="center"
+            android:foregroundGravity="center_vertical"
+            app:srcCompat="@drawable/supermarket" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/textView36"
             android:layout_width="match_parent"
-            android:layout_height="62dp" />
+            android:layout_height="wrap_content" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView10"
             android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:orientation="horizontal">
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="Menu de Opciones"
+            android:textColor="#050505"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView41"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="33dp" />
 
-            <Button
-                android:id="@+id/mLogoutBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Cerrar Sesión" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/border_boton"
+            android:gravity="center"
+            android:onClick="abrirPantallaCliente"
+            android:text="Clientes"
+            android:textColor="#151212"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/border_boton"
+            android:gravity="center"
+            android:onClick="abrirPantallaProducto"
+            android:text="Productos"
+            android:textColor="#151212"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/border_boton"
+            android:gravity="center"
+            android:onClick="abrirPantallaVenta"
+            android:text="Ventas"
+            android:textColor="#151212"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+        <Button
+            android:id="@+id/BtnLogout"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/border_boton"
+            android:gravity="center"
+            android:text="Cerra Sesión "
+            android:textColor="#151212"
+            android:textSize="18sp" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

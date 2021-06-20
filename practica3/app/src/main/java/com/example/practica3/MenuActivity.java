@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /*
-Autor: Angel Jativa, Paul Montaleza
+Autor: Isabel Marquinez, Kevin Santana
 Creado: 16/5/2021
 modificado: 09/06/2021
 descripcion: Vetana de inicio de session y acceso a las pantalla de Registro y Recuperacion de Contraseña.
@@ -17,18 +17,18 @@ descripcion: Vetana de inicio de session y acceso a las pantalla de Registro y R
 
 public class MenuActivity extends AppCompatActivity {
 
-    Button mLogoutBtn;
+    Button BtnLogout;
     SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        mLogoutBtn = findViewById(R.id.mLogoutBtn);
+        BtnLogout = findViewById(R.id.BtnLogout);
 
         preferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
 
-        mLogoutBtn.setOnClickListener(new View.OnClickListener() { //SIver para cerrar la sesion de la aplicacion
+        BtnLogout.setOnClickListener(new View.OnClickListener() { //cerrar la sesion de la aplicacion
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = preferences.edit();
@@ -42,8 +42,6 @@ public class MenuActivity extends AppCompatActivity {
         });
 
     }
-
-
 
     //PROCESO 2
     public void abrirPantallaCliente(View vista){
@@ -62,7 +60,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent pantallaVenta=new Intent(getApplicationContext(),VentaActivity.class); //Creando un intent para invocar a Venta
         startActivity(pantallaVenta);//Iniciando lapantalla de venta
     }
-
-
+    /*public void CerrasSesion(View vista){
+        Intent cerrarSesion2=new Intent(getApplicationContext(),MainActivity.class); //Creando un intent para invocar a Venta
+        startActivity(cerrarSesion2);//Iniciando lapantalla de venta
+    }*/
 
 }

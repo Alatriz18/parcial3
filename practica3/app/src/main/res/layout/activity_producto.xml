@@ -7,9 +7,11 @@
     tools:context=".ProductoActivity">
 
     <LinearLayout
-        android:layout_width="433dp"
-        android:layout_height="860dp"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="@drawable/fondoinicial"
         android:orientation="vertical"
+        android:padding="10dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -19,9 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:gravity="center"
-            android:text="Productos"
+            android:text="GESTIÓN PRODUCTOS"
             android:textColor="#131313"
-            android:textSize="24sp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtidProductoEditar"
@@ -33,12 +36,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView69"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
             <EditText
                 android:id="@+id/txtNombreRegistroProduct"
                 android:layout_width="wrap_content"
@@ -46,30 +43,21 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese el nombre Producto"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColorHint="#EE292525" />
 
-            <TextView
-                android:id="@+id/textView70"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView71"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="4dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView72"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/txtPrecioRegistroProduct1"
@@ -78,30 +66,21 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese Precio Prodcuto"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColorHint="#EE292525" />
 
-            <TextView
-                android:id="@+id/textView73"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView74"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="9dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView75"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/txtStockRegistroProduct1"
@@ -110,30 +89,21 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese la cantidad"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColorHint="#EE292525" />
 
-            <TextView
-                android:id="@+id/textView76"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView77"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView78"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/txtIvaRegistroProducto1"
@@ -142,36 +112,35 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese Iva"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColorHint="#EE292525" />
 
-            <TextView
-                android:id="@+id/textView79"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView80"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="7dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/txtCalendar1"
-                android:layout_width="238dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Fecha Creacion"
-                android:textSize="16sp" />
+                android:textColor="#EE292525"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView82"
-                android:layout_width="15dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -188,20 +157,28 @@
         <TextView
             android:id="@+id/textView83"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="6dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/button11"
-                android:layout_width="wrap_content"
+                android:layout_width="142dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/teal_700"
+                android:drawableLeft="@android:drawable/ic_menu_save"
                 android:onClick="guardarProducto"
-                android:text="Ingresar" />
+                android:text="Guardar" />
 
             <TextView
                 android:id="@+id/textView84"
@@ -211,11 +188,20 @@
 
             <Button
                 android:id="@+id/button12"
-                android:layout_width="wrap_content"
+                android:layout_width="148dp"
                 android:layout_height="68dp"
                 android:layout_weight="1"
+                android:background="@android:color/holo_red_light"
+                android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
                 android:onClick="LimpiarCampos"
-                android:text="Limpiar" />
+                android:text="Cancelar" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <TextView
@@ -226,7 +212,7 @@
         <ListView
             android:id="@+id/lstProductos"
             android:layout_width="match_parent"
-            android:layout_height="230dp" />
+            android:layout_height="249dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

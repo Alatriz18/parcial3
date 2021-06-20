@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_registro"
+    android:background="@drawable/fondoinicial"
     android:onClick="registrarUsuario"
     tools:context=".RegistroActivity">
 
@@ -17,7 +17,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/fondoinicial"
             android:orientation="vertical"
+            android:padding="20dp"
             tools:layout_editor_absoluteX="123dp"
             tools:layout_editor_absoluteY="218dp">
 
@@ -28,14 +30,17 @@
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
                 android:text="REGISTRO DE USUARIO"
+                android:textColor="#0B0A0A"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="99dp"
-                app:srcCompat="@drawable/register" />
+                android:layout_width="189dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center"
+                android:foregroundGravity="center_vertical"
+                app:srcCompat="@drawable/addusuario" />
 
             <TextView
                 android:id="@+id/textView30"
@@ -49,10 +54,12 @@
 
             <EditText
                 android:id="@+id/txtApellidoRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="337dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Ingrese su Apellido"
                 android:inputType="textPersonName" />
 
@@ -63,10 +70,12 @@
 
             <EditText
                 android:id="@+id/txtNombreRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="338dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Ingrese su Nombre"
                 android:inputType="textPersonName" />
 
@@ -77,10 +86,12 @@
 
             <EditText
                 android:id="@+id/txtEmailRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="338dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Ingrese su email"
                 android:inputType="textEmailAddress" />
 
@@ -91,10 +102,12 @@
 
             <EditText
                 android:id="@+id/txtPasswordRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="337dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Ingrese su contraseña"
                 android:inputType="textPassword" />
 
@@ -105,10 +118,12 @@
 
             <EditText
                 android:id="@+id/txtPasswordConfirmadaRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="340dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Confirme su contraseña"
                 android:inputType="textPassword" />
 
@@ -119,10 +134,12 @@
 
             <EditText
                 android:id="@+id/txtTelefonoRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="340dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Numero Celular"
                 android:inputType="phone" />
 
@@ -133,10 +150,12 @@
 
             <EditText
                 android:id="@+id/txtDireccionRegistro"
-                android:layout_width="match_parent"
+                android:layout_width="340dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="  Ingrese su Dirección"
                 android:inputType="textPersonName" />
 
@@ -148,16 +167,18 @@
             <EditText
                 android:id="@+id/txtFechaRegistro"
                 style="@android:style/Widget.AutoCompleteTextView"
-                android:layout_width="match_parent"
+                android:layout_width="342dp"
                 android:layout_height="41dp"
+                android:layout_gravity="center"
                 android:background="@drawable/txt_border_redondeado"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="date" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="23dp" />
+                android:layout_height="11dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -172,9 +193,9 @@
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="257dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_boton_registro"
+                    android:layout_width="331dp"
+                    android:layout_height="match_parent"
+                    android:background="#8103DAC5"
                     android:onClick="registrarUsuario"
                     android:text="Registrar cuenta" />
 
@@ -186,9 +207,9 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/textView42"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="11dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -203,9 +224,9 @@
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="257dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_boton_cancelar"
+                    android:layout_width="330dp"
+                    android:layout_height="match_parent"
+                    android:background="#6BFF4444"
                     android:onClick="cerrarPantallaRegistro"
                     android:text="Cancelar" />
 
