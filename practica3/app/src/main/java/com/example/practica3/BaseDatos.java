@@ -29,8 +29,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     private static final String tablaProducto= "create table Producto(id_product integer primary key autoincrement, " +
             "nombre_product text, precio_product text, cantidad_product text, iva_product text, fechaRegistro_product text)";
 
-    private static final String tablaVenta="create table venta(id_ven integer primary key autoincrement, " +
-            "clientesele_ven text, productosele_ven text, precioTotal_ven text, fechaventa_ven text)";
+    private static final String tablaVenta= "create table venta(id_ven integer primary key autoincrement, " +
+            "clientesele_ven text, productosele_ven text, preciototal_ven text, fechaventa_ven text)";
 
     //constructor
     public BaseDatos(Context contexto){
@@ -44,6 +44,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(tablaUsuario);//ejecutando el query DDL para crear la tabla con sus atributos
         db.execSQL(tablaCliente);//ejecutando el query DDL para crear la tabla con sus atributos
         db.execSQL(tablaProducto);//ejecutando el query DDL para crear la tabla con sus atributos
+        db.execSQL(tablaVenta);//query para tabla Venta
     }
 
     //proceso 2: Metodo que se ejecuta automaticamente cuando se detectan cambios en la version de nuestra Bdd
@@ -55,6 +56,8 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(tablaCliente);//Ejecucion del codigo para crear la tabla cliente con su nueva estructura
         db.execSQL("DROP TABLE IF EXISTS producto"); //Eliminacion de la version anterior de la tabla producto
         db.execSQL(tablaProducto);//Ejecucion del codigo para crear la tabla producto con su nueva estructura
+        db.execSQL("DROP TABLE IF EXISTS venta");///Eliminacion de la version anterior de la tabla venta
+        db.execSQL(tablaVenta);//Ejecucion del codigo para crear la tabla venta
 
     }
 
