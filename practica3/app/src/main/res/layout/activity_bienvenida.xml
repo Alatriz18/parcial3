@@ -25,7 +25,7 @@
             android:layout_height="93dp"
             android:gravity="center"
             android:text="SUPERMARKET"
-            android:textColor="#ECE5E5"
+            android:textColor="#CC3838"
             android:textSize="30sp"
             android:textStyle="bold" />
 
