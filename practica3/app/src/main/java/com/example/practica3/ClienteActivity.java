@@ -29,7 +29,7 @@ public class ClienteActivity extends AppCompatActivity {
 
     ListView IstClientes;
     ArrayList<String> listaClientes= new ArrayList<>();
-    Cursor clienteObtenidos;
+    public Cursor clienteObtenidos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +101,7 @@ public class ClienteActivity extends AppCompatActivity {
 
     }
 
-    //metodo par aconsultar los clientes existenetes en sqlite y presentarlos en una lista
+    //metodo para consultar los clientes existenetes en sqlite y presentarlos en una lista
     public void consultarDatos(){
         listaClientes.clear();
         clienteObtenidos=Bdd.obtenerClientes();//consultando clientes y guardandolos en un cursor
@@ -118,6 +118,6 @@ public class ClienteActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"No Existen clientes registrados",
                     Toast.LENGTH_LONG).show();
         }
-
+        //clienteObtenidos.close();
     }
 }

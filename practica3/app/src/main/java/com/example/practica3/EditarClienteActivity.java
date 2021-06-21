@@ -37,7 +37,7 @@ public class EditarClienteActivity extends AppCompatActivity {
         Bundle parametrosExtra=getIntent().getExtras();//capturando los parametros que se han pasado a esta actividad
         if (parametrosExtra!=null){
             try{
-                //Intente realizar estas lineas de codigo
+                //-------------------------------------------
                 id=parametrosExtra.getString("id");
                 cedula=parametrosExtra.getString("cedula");
                 apellido=parametrosExtra.getString("apellido");
@@ -102,6 +102,5 @@ public class EditarClienteActivity extends AppCompatActivity {
             //Presentando un mensaje cuando un campo este vacio
             Toast.makeText(getApplicationContext(), "Complete todos los campos", Toast.LENGTH_SHORT).show();
         }
-
     }
 }

@@ -60,9 +60,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent pantallaVenta=new Intent(getApplicationContext(),VentaActivity.class); //Creando un intent para invocar a Venta
         startActivity(pantallaVenta);//Iniciando lapantalla de venta
     }
-    /*public void CerrasSesion(View vista){
-        Intent cerrarSesion2=new Intent(getApplicationContext(),MainActivity.class); //Creando un intent para invocar a Venta
-        startActivity(cerrarSesion2);//Iniciando lapantalla de venta
+    /*public void nuevoCalculo(View vista){
+        Intent calcularNuevo=new Intent(getApplicationContext(),MainActivity.class); //Creando un intent para invocar a Venta
+        startActivity(calcularNuevo);//Iniciando
     }*/
 
 }

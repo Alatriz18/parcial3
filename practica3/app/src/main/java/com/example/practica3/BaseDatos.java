@@ -184,4 +184,29 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
         return false;
     }
+
+    //metodo Agregar ventas
+    public boolean agregarVenta(String clientesele, String productosele, String preciototal, String fechaventa){
+        SQLiteDatabase miBdd=getWritableDatabase();
+        if (miBdd!=null){
+            miBdd.execSQL("insert into venta(clientesele_ven, productosele_ven, preciototal_ven, fechaventa_ven) " +
+                    "values  ('"+clientesele+"','"+productosele+"','"+preciototal+"','"+fechaventa+"');");
+            miBdd.close();
+            return true;
+        }
+        return false;
+    }
+
+    //Metodo consultar/obtener venta
+    public Cursor obtenerVenta(){
+        SQLiteDatabase miBdd= getWritableDatabase();//objeto para manejar la base de datos
+        //consultando las ventas en la base de datos y guardandolos en un cursor
+        Cursor ventas=miBdd.rawQuery("select * from venta; ", null);
+        if (ventas.moveToFirst()){
+            miBdd.close();
+            return ventas; //retornar el cursor que contiene el listado de cliente
+        }else {
+            return null;
+        }
+    }
 }

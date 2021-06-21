@@ -51,7 +51,7 @@ public class EditarProducto extends AppCompatActivity {
         txtIvaRegistroProducto1.setText(iva);
         txtCalendar1.setText(fecha);
 
-        Bdd = new BaseDatos(getApplicationContext());//Instanciando el objeto a traves del
+        Bdd = new BaseDatos(getApplicationContext());//Instanciando el objeto bdd
     }
 
     //Metodo para volver
