@@ -5,9 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /*
 Autor: Isabel Marquinez, Kevin Santana
@@ -32,7 +34,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             "nombre_product text, precio_product DECIMAL(2,0), cantidad_product INTEGER, iva_product INTEGER, fechaRegistro_product text)";
 
     private static final String tablaVenta= "create table venta(id_ven integer primary key autoincrement, " +
-            "clientesele_ven text, productosele_ven text, preciototal_ven text, fechaventa_ven text)";
+            "clientesele_ven text, productosele_ven text,cantidad_ven int, preciototal_ven float, fechaventa_ven text)";
 
     //constructor
     public BaseDatos(Context contexto){
@@ -187,13 +189,34 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
         return false;
     }
+    public Producto verProductId(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //ArrayList<Clientes> listaClientes = new ArrayList<>();
+        Producto product = null;
+        Cursor cursorProduct;
+
+        cursorProduct = db.rawQuery("SELECT * FROM Producto WHERE id_product =" + id + " LIMIT 1", null);
+        if (cursorProduct.moveToFirst()) {
+
+            product = new Producto();
+            product.setId(cursorProduct.getInt(0));
+            product.setNombre(cursorProduct.getString(1));
+            product.setPrecio((cursorProduct.getFloat(2)));
+            product.setIva(cursorProduct.getString(3));
+            product.setStock(cursorProduct.getInt(4));
+            product.setFechaCaducidad(cursorProduct.getString(5));
+        }
+        cursorProduct.close();
+        return product;
+
+    }
 
     //metodo Agregar ventas
-    public boolean agregarVenta(String clientesele, String productosele, String preciototal, String fechaventa){
+    public boolean agregarVenta(String clientesele, String productosele,int cantidadven, float preciototal){
         SQLiteDatabase miBdd=getWritableDatabase();
         if (miBdd!=null){
-            miBdd.execSQL("insert into venta(clientesele_ven, productosele_ven, preciototal_ven, fechaventa_ven) " +
-                    "values  ('"+clientesele+"','"+productosele+"','"+preciototal+"','"+fechaventa+"');");
+            miBdd.execSQL("insert into venta(clientesele_ven, productosele_ven,cantidad_ven, preciototal_ven, fechaventa_ven) " +
+                    "values  ('"+clientesele+"','"+productosele+"','"+preciototal+"','"+cantidadven+"','"+getDate()+"');");
             miBdd.close();
             return true;
         }
@@ -211,5 +234,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         }else {
             return null;
         }
+    }
+    private String getDate() {             // se vería así: miercoles 26/09/2018 05:30 p.m.
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE dd/MM/yyyy hh:mm  a", Locale.getDefault());
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

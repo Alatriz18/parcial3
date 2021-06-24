@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,8 @@ import java.util.Calendar;
 public class EditarProducto extends AppCompatActivity {
     String id, nombre, precio, cantidad,iva, fecha;
     TextView txtidProductoEditar, txtCalendar1;
-    EditText txtNombreRegistroProduct1, txtPrecioRegistroProduct1, txtStockRegistroProduct1, txtIvaRegistroProducto1;
+    EditText txtNombreRegistroProduct1, txtPrecioRegistroProduct1, txtStockRegistroProduct1;
+    RadioButton txtIvaRegistroProducto1;
     BaseDatos Bdd;
     int error=0;
     @Override
@@ -92,24 +94,23 @@ public class EditarProducto extends AppCompatActivity {
         String iva= txtIvaRegistroProducto1.getText().toString();
         String fecha= txtCalendar1.getText().toString();
 
-        if (Double.parseDouble(precio) < 1) {
-            error++;
-            txtPrecioRegistroProduct1.setError("Stock Debe ser mayor a 0");
-            txtPrecioRegistroProduct1.requestFocus();
-        }
-        if (Double.parseDouble(cantidad) < 1) {
-            error++;
-            txtStockRegistroProduct1.setError("Stock Debe ser mayor a 0");
-            txtStockRegistroProduct1.requestFocus();
+        if (!nombre.equals("") && !precio.equals("") && !cantidad.equals("") && !fecha.equals("")){
+                    Bdd.actualizarProductos(nombre, precio, cantidad, iva, fecha,id);
+                    Toast.makeText(getApplicationContext(),"Productos Registrado Exitosamente",
+                            Toast.LENGTH_LONG).show();
+            if (Double.parseDouble(precio) > 0) {
+                if (Double.parseDouble(cantidad) > 0) {
+                }else{
+                    txtStockRegistroProduct1.setError("Stock Debe ser mayor a 0");
+                    txtStockRegistroProduct1.requestFocus();}
+            }else{
+                txtPrecioRegistroProduct1.setError("precio Debe ser mayor a 0");
+                txtPrecioRegistroProduct1.requestFocus();}
+        }else{
+            Toast.makeText(getApplicationContext(),"Para guardar complete todos los campos del formulario",
+                    Toast.LENGTH_LONG).show();
         }
 
-        if (!nombre.equals("")&& !precio.equals("") && !cantidad.equals("") && !iva.equals("") && !fecha.equals("")){
-            Bdd.actualizarProductos(nombre,precio,cantidad,iva,fecha, id);//Procesando la actualizacion en la bdd
-            Toast.makeText(getApplicationContext(),"Se Actualizaron los datos Correctamente", Toast.LENGTH_SHORT).show();
-        }else {
-            //Presentando un mensaje cuando un campo este vacio
-            Toast.makeText(getApplicationContext(), "Complete todos los campos", Toast.LENGTH_SHORT).show();
-        }
 
     }
     public void abriCalendario(View view) {

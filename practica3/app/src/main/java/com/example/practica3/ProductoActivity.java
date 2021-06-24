@@ -95,28 +95,30 @@ public class ProductoActivity extends AppCompatActivity {
             ivaP = String.valueOf(1);
         }*/
 
-        if (txtIvaRegistroProducto.isChecked()){
+        if (txtIvaRegistroProducto.isChecked()) {
             ivaP1 = Integer.parseInt(String.valueOf(1));
-
         }
 
-        if (Double.parseDouble(precioP) < 1) {
-            error++;
-            txtPrecioRegistroProduct.setError("precio Debe ser mayor a 0");
-            txtPrecioRegistroProduct.requestFocus();
-        }
-        if (Double.parseDouble(cantidadP) < 1) {
-            error++;
-            txtStockRegistroProduct.setError("Stock Debe ser mayor a 0");
-            txtStockRegistroProduct.requestFocus();
-        }
+
+
+
+
+
 
         if (!nombreP.equals("") && !precioP.equals("") && !cantidadP.equals("") && !fechaP.equals("")){
+            if (Double.parseDouble(precioP) > 0) {
+             if (Double.parseDouble(cantidadP) > 0) {
 
             Bdd.AgregarProducto(nombreP, precioP, cantidadP, ivaP, fechaP);
             //Limpiar(null);
             Toast.makeText(getApplicationContext(),"Productos Registrado Exitosamente",
                     Toast.LENGTH_LONG).show();
+        }else{
+                    txtStockRegistroProduct.setError("Stock Debe ser mayor a 0");
+                    txtStockRegistroProduct.requestFocus();}
+            }else{
+                txtPrecioRegistroProduct.setError("precio Debe ser mayor a 0");
+                txtPrecioRegistroProduct.requestFocus();}
         }else{
             Toast.makeText(getApplicationContext(),"Para guardar complete todos los campos del formulario",
                     Toast.LENGTH_LONG).show();
