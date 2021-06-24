@@ -95,11 +95,12 @@ public class EditarProducto extends AppCompatActivity {
         String fecha= txtCalendar1.getText().toString();
 
         if (!nombre.equals("") && !precio.equals("") && !cantidad.equals("") && !fecha.equals("")){
+            if (Double.parseDouble(precio) > 0) {
+                if (Double.parseDouble(cantidad) > 0) {
                     Bdd.actualizarProductos(nombre, precio, cantidad, iva, fecha,id);
                     Toast.makeText(getApplicationContext(),"Productos Registrado Exitosamente",
                             Toast.LENGTH_LONG).show();
-            if (Double.parseDouble(precio) > 0) {
-                if (Double.parseDouble(cantidad) > 0) {
+
                 }else{
                     txtStockRegistroProduct1.setError("Stock Debe ser mayor a 0");
                     txtStockRegistroProduct1.requestFocus();}

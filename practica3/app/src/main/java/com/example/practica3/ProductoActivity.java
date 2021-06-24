@@ -95,15 +95,6 @@ public class ProductoActivity extends AppCompatActivity {
             ivaP = String.valueOf(1);
         }*/
 
-        if (txtIvaRegistroProducto.isChecked()) {
-            ivaP1 = Integer.parseInt(String.valueOf(1));
-        }
-
-
-
-
-
-
 
         if (!nombreP.equals("") && !precioP.equals("") && !cantidadP.equals("") && !fechaP.equals("")){
             if (Double.parseDouble(precioP) > 0) {

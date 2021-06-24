@@ -62,15 +62,6 @@
                 android:layout_gravity="center" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/clienteVentas"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center_vertical"
-            android:hint="Cliente Seleccionado"
-            android:paddingLeft="14dp"
-            android:textColorHint="#121111" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="47dp"
@@ -94,16 +85,6 @@
                 android:layout_height="34dp"
                 android:layout_gravity="center" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/productoVentas"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center_vertical"
-            android:hint="Productos Seleccionados"
-            android:paddingLeft="14dp"
-            android:textColor="#0B0A0A"
-            android:textColorHint="#121111" />
 
         <EditText
             android:id="@+id/cantidadVentas"
