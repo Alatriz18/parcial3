@@ -7,15 +7,12 @@
     tools:context=".EditarClienteActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/fondoinicial"
         android:orientation="vertical"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="177dp">
 
         <TextView
             android:id="@+id/textView12"
@@ -44,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese su cedula"
+            android:hint="Ingrese cedula cliente"
             android:inputType="number"
             android:paddingLeft="10dp"
             android:textColorHint="#D30E0D0D" />
@@ -54,8 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese Apellido"
+            android:hint="Ingrese Apellido cliente"
             android:inputType="textPersonName"
+            android:digits="abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ' ' "
             android:paddingLeft="10dp"
             android:textColorHint="#D30E0D0D" />
 
@@ -64,9 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese Nombres"
+            android:hint="Ingrese Nombres cliente"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
+            android:digits="abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ' ' "
             android:textColorHint="#D30E0D0D" />
 
         <EditText
@@ -74,8 +73,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese su Telefono"
+            android:hint="Ingrese telfno cliente"
             android:inputType="textPersonName"
+            android:digits="1234567890"
+            android:maxLength="10"
             android:paddingLeft="10dp"
             android:textColorHint="#D30E0D0D" />
 
@@ -84,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese su direccion"
+            android:hint="Ingrese direccion cliente"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             android:textColorHint="#D30E0D0D" />

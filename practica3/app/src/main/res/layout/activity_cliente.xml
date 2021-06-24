@@ -8,14 +8,12 @@
     tools:context=".ClienteActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/fondoinicial"
         android:orientation="vertical"
-        android:padding="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="177dp">
 
         <TextView
             android:id="@+id/textView47"
@@ -49,6 +47,8 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese el numero de cedula"
+                android:digits="0123456789"
+                android:maxLength="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:textColorHint="#EE292525" />
@@ -72,6 +72,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese los apellidos"
+                android:digits="abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ' ' "
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:textColorHint="#EE292525" />
@@ -95,6 +96,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Ingrese los nombres"
+                android:digits="abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ' ' "
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:textColorHint="#EE292525" />
@@ -118,9 +120,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Ingrese telefono"
-                android:inputType="textPersonName"
+                android:hint="Ingrese numero de teléfono"
+                android:inputType="phone"
                 android:paddingLeft="10dp"
+                android:maxLength="10"
                 android:textColorHint="#EE292525" />
 
         </LinearLayout>
@@ -202,7 +205,7 @@
             android:layout_height="wrap_content" />
 
         <ListView
-            android:id="@+id/IstClientes"
+            android:id="@+id/lstClientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,14 +22,16 @@ import java.util.Calendar;
 
 public class ProductoActivity extends AppCompatActivity {
     //Entrada
-    EditText txtNombreRegistroProduct, txtPrecioRegistroProduct, txtStockRegistroProduct, txtIvaRegistroProducto;
+    EditText txtNombreRegistroProduct, txtPrecioRegistroProduct, txtStockRegistroProduct;
+    RadioButton txtIvaRegistroProducto;
     BaseDatos Bdd;
     TextView txtCalendar;
-
+    int error=0;
+    int ivaP1=0;
     //Salida
     ListView lstProductos;
     ArrayList<String> listaProductos = new ArrayList<>();
-    Cursor productosObtenidos;
+    public Cursor productosObtenidos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class ProductoActivity extends AppCompatActivity {
         txtNombreRegistroProduct=(EditText) findViewById(R.id.txtNombreRegistroProduct);
         txtPrecioRegistroProduct=(EditText) findViewById(R.id.txtPrecioRegistroProduct1);
         txtStockRegistroProduct=(EditText) findViewById(R.id.txtStockRegistroProduct1);
-        txtIvaRegistroProducto=(EditText) findViewById(R.id.txtIvaRegistroProducto1);
+        txtIvaRegistroProducto=(RadioButton) findViewById(R.id.txtIvaRegistroProducto1);
         txtCalendar=(TextView) findViewById(R.id.txtCalendar1);
         lstProductos=(ListView) findViewById(R.id.lstProductos);
 
@@ -87,8 +90,28 @@ public class ProductoActivity extends AppCompatActivity {
         String ivaP = txtIvaRegistroProducto.getText().toString();
         String fechaP= txtCalendar.getText().toString();
 
+        /*ivaP = String.valueOf(0);
+        if (txtIvaRegistroProducto.isChecked()) {
+            ivaP = String.valueOf(1);
+        }*/
 
-        if (!nombreP.equals("") && !precioP.equals("") && !cantidadP.equals("") && !ivaP.equals("") && !fechaP.equals("")){
+        if (txtIvaRegistroProducto.isChecked()){
+            ivaP1 = Integer.parseInt(String.valueOf(1));
+
+        }
+
+        if (Double.parseDouble(precioP) < 1) {
+            error++;
+            txtPrecioRegistroProduct.setError("precio Debe ser mayor a 0");
+            txtPrecioRegistroProduct.requestFocus();
+        }
+        if (Double.parseDouble(cantidadP) < 1) {
+            error++;
+            txtStockRegistroProduct.setError("Stock Debe ser mayor a 0");
+            txtStockRegistroProduct.requestFocus();
+        }
+
+        if (!nombreP.equals("") && !precioP.equals("") && !cantidadP.equals("") && !fechaP.equals("")){
 
             Bdd.AgregarProducto(nombreP, precioP, cantidadP, ivaP, fechaP);
             //Limpiar(null);

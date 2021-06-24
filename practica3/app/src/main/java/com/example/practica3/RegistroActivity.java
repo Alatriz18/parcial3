@@ -24,7 +24,7 @@ public class RegistroActivity extends AppCompatActivity {
 
     //Entrada
     EditText txtApellidoRegistro, txtNombreRegistro, txtEmailRegistro, txtPasswordRegistro, txtPasswordConfirmadaRegistro, txtTelefonoRegistro, txtDireccionRegistro;
-    TextView txtFechaRegistro;
+    String txtFechaRegistro;
     BaseDatos miBdd;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -40,7 +40,7 @@ public class RegistroActivity extends AppCompatActivity {
         txtPasswordConfirmadaRegistro = (EditText) findViewById(R.id.txtPasswordConfirmadaRegistro);
         txtTelefonoRegistro = (EditText) findViewById(R.id.txtTelefonoRegistro);
         txtDireccionRegistro = (EditText) findViewById(R.id.txtDireccionRegistro);
-        txtFechaRegistro=(TextView)findViewById(R.id.txtFechaRegistro);
+        //txtFechaRegistro=(TextView)findViewById(R.id.txtFechaRegistro);
 
         miBdd = new BaseDatos(getApplicationContext());
     }
@@ -63,7 +63,6 @@ public class RegistroActivity extends AppCompatActivity {
         String direccion = txtDireccionRegistro.getText().toString();
         SimpleDateFormat fechaC=new SimpleDateFormat("d,MMM 'del', yyy hh:mm");
         String sFecha=fechaC.format(date);
-        txtFechaRegistro.setText(sFecha);
 
         if (txtApellidoRegistro.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Campo Apellido Vacio", Toast.LENGTH_LONG).show();

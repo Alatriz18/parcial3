@@ -7,19 +7,20 @@
     tools:context=".MenuActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/fondo2"
         android:orientation="vertical"
         android:padding="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="177dp"
+        tools:ignore="MissingConstraints">
+
 
         <TextView
             android:id="@+id/textView35"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="49dp" />
 
         <TextView
             android:id="@+id/textView37"

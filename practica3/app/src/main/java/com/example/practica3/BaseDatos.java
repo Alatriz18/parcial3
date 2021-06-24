@@ -5,7 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
 Autor: Isabel Marquinez, Kevin Santana
@@ -27,7 +29,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     //Definiendo la estructura de la tabla cliente
     private static final String tablaProducto= "create table Producto(id_product integer primary key autoincrement, " +
-            "nombre_product text, precio_product text, cantidad_product text, iva_product text, fechaRegistro_product text)";
+            "nombre_product text, precio_product DECIMAL(2,0), cantidad_product INTEGER, iva_product INTEGER, fechaRegistro_product text)";
 
     private static final String tablaVenta= "create table venta(id_ven integer primary key autoincrement, " +
             "clientesele_ven text, productosele_ven text, preciototal_ven text, fechaventa_ven text)";
@@ -109,6 +111,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             return null;
         }
     }
+
 
     //Metodo para actualizar un registro de cliente
     public boolean actualizarCliente(String cedula, String apellido, String nombre, String telefono, String direccion, String id){

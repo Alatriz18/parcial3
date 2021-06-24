@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 /*
 Autor: Isabel Marquinez
@@ -27,7 +26,7 @@ public class ClienteActivity extends AppCompatActivity {
     BaseDatos Bdd;
     //Salida
 
-    ListView IstClientes;
+    ListView lstClientes;
     ArrayList<String> listaClientes= new ArrayList<>();
     public Cursor clienteObtenidos;
 
@@ -40,10 +39,10 @@ public class ClienteActivity extends AppCompatActivity {
         txtNombreCliente=(EditText) findViewById(R.id.txtNombreCliente);
         txtTelefonoCliente=(EditText) findViewById(R.id.txtTelefonoCliente);
         txtDireccionCliente=(EditText) findViewById(R.id.txtDireccionCliente);
-        IstClientes=(ListView) findViewById(R.id.IstClientes);
+        lstClientes=(ListView) findViewById(R.id.lstClientes);
         Bdd=new BaseDatos(getApplicationContext()); //Instanciando el objeto para llamar a los metodos de la Base de Datos
         consultarDatos(); //llamando al metodo para cargar los datos de clientes ene l list view
-        IstClientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lstClientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //programacion de acciones cuando se da clic de un elemento de la lista cliente
@@ -112,7 +111,7 @@ public class ClienteActivity extends AppCompatActivity {
                 String nombre=clienteObtenidos.getString(3).toString();
                 listaClientes.add(id+": "+apellido+" "+nombre);
                 ArrayAdapter<String> adaptadorClientes= new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listaClientes);
-                IstClientes.setAdapter(adaptadorClientes);
+                lstClientes.setAdapter(adaptadorClientes);
             }while (clienteObtenidos.moveToNext());
         }else {
             Toast.makeText(getApplicationContext(),"No Existen clientes registrados",

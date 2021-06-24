@@ -7,14 +7,12 @@
     tools:context=".ProductoActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/fondoinicial"
         android:orientation="vertical"
-        android:padding="15dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="177dp">
 
         <TextView
             android:id="@+id/textView44"
@@ -44,6 +42,7 @@
                 android:ems="10"
                 android:hint="Ingrese el nombre Producto"
                 android:inputType="textPersonName"
+                android:digits="abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ' ' "
                 android:paddingLeft="10dp"
                 android:textColorHint="#2E2D2D" />
 
@@ -62,6 +61,7 @@
                 android:ems="10"
                 android:hint="Ingrese Precio Prodcuto"
                 android:inputType="textPersonName"
+                android:digits="0123456789.,"
                 android:paddingLeft="10dp"
                 android:textColorHint="#2E2D2D" />
 
@@ -81,31 +81,22 @@
                 android:hint="Ingrese la cantidad"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
+                android:digits="0123456789"
                 android:textColorHint="#2E2D2D" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/txtIvaRegistroProducto1"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/txtIvaRegistroProducto1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Ingrese Iva"
-                android:inputType="textPersonName"
-                android:paddingLeft="10dp"
-                android:textColorHint="#2E2D2D" />
-
-        </LinearLayout>
+            android:layout_height="48dp"
+            android:text="Asignar IVA"
+            android:textColor="#EE292525"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="59dp"
+            android:layout_height="72dp"
             android:orientation="horizontal"
             android:paddingLeft="10dp">
 
@@ -114,7 +105,8 @@
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Fecha Creacion"
+                android:text="Fecha"
+                android:textColor="#E9201E1E"
                 android:textColorHint="#090707"
                 android:textSize="20sp" />
 

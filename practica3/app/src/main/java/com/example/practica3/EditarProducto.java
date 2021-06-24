@@ -19,6 +19,7 @@ public class EditarProducto extends AppCompatActivity {
     TextView txtidProductoEditar, txtCalendar1;
     EditText txtNombreRegistroProduct1, txtPrecioRegistroProduct1, txtStockRegistroProduct1, txtIvaRegistroProducto1;
     BaseDatos Bdd;
+    int error=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +91,17 @@ public class EditarProducto extends AppCompatActivity {
         String cantidad= txtStockRegistroProduct1.getText().toString();
         String iva= txtIvaRegistroProducto1.getText().toString();
         String fecha= txtCalendar1.getText().toString();
+
+        if (Double.parseDouble(precio) < 1) {
+            error++;
+            txtPrecioRegistroProduct1.setError("Stock Debe ser mayor a 0");
+            txtPrecioRegistroProduct1.requestFocus();
+        }
+        if (Double.parseDouble(cantidad) < 1) {
+            error++;
+            txtStockRegistroProduct1.setError("Stock Debe ser mayor a 0");
+            txtStockRegistroProduct1.requestFocus();
+        }
 
         if (!nombre.equals("")&& !precio.equals("") && !cantidad.equals("") && !iva.equals("") && !fecha.equals("")){
             Bdd.actualizarProductos(nombre,precio,cantidad,iva,fecha, id);//Procesando la actualizacion en la bdd
